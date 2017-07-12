@@ -83,7 +83,7 @@ let formData = [
 ];
 
 // get the parent
-let fields = document.querySelector('.fields')
+let fields = document.querySelector('.fields') //What does this exactly do???
 // create element
 // set it up, setting any attributes
 
@@ -101,7 +101,12 @@ for (var i = 0; i < formData.length; i++) {
     // innerHTML - sets value of whatever is in the element
     fields.appendChild(select)
   }
-
+  else if (formData[i].type === 'textarea'){
+    let textarea = document.createElement('textarea');
+    textarea.placeholder = formData[i].label;
+    textarea.id = formData[i].id;
+    fields.appendChild(textarea)
+  }
 
   else {
     let form1 = document.createElement( 'input' );
@@ -111,6 +116,8 @@ for (var i = 0; i < formData.length; i++) {
     fields.appendChild(form1)
   }
 }
+
+
 // append it to the parent
 
 
